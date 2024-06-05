@@ -1,0 +1,8 @@
+# Node Modules folder
+node_modules
+
+# Environment Variable Files
+.env
+.env.local
+*.env
+*.env.local
