@@ -6,5 +6,6 @@ You will learn all the basics of expressjs through this free course.
 
 - Content
   - [Creating Our First App](https://github.com/DevOpsLakshyaraj/expressjs-youtube-course/tree/master/firstapp)
+  - [Templates & Staticfiles](https://github.com/DevOpsLakshyaraj/expressjs-youtube-course/tree/master/templates-and-staticfiles)
 
 Youtube Channel: [https://www.youtube.com/@devopslakshyaraj](https://www.youtube.com/@devopslakshyaraj) 
