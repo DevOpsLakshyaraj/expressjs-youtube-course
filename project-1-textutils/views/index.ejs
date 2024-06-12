@@ -21,7 +21,7 @@
 
             <hr class="my-3">
 
-            <form action="">
+            <form action="/analyzed" method="post">
                 <div class="form-group">
                     <label for="textInput">Text Input</label>
                     <textarea name="textInput" id="textInput" rows="3" class="form-control"
@@ -30,24 +30,24 @@
                 
                 <div class="form-group">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" name="toUpperCase" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Convert To Upper Case</label>
+                        <input type="checkbox" class="custom-control-input" name="analyzeAction" id="toUpperCase" value="toUpperCase">
+                        <label class="custom-control-label" for="toUpperCase">Convert To Upper Case</label>
                     </div>
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" name="toLowerCase" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Convert To Lower Case</label>
+                        <input type="checkbox" class="custom-control-input" name="analyzeAction" id="toLowerCase" value="toLowerCase">
+                        <label class="custom-control-label" for="toLowerCase">Convert To Lower Case</label>
                     </div>
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" name="removeExtraSpaces" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Remove Extra Spaces</label>
+                        <input type="checkbox" class="custom-control-input" name="analyzeAction" id="removeExtraSpaces" value="removeExtraSpaces">
+                        <label class="custom-control-label" for="removeExtraSpaces">Remove Extra Spaces</label>
                     </div>
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" name="reomvePunctuation" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Remove Punctuation</label>
+                        <input type="checkbox" class="custom-control-input" name="analyzeAction" id="removePunctuation" value="removePunctuation">
+                        <label class="custom-control-label" for="removePunctuation">Remove Punctuation</label>
                     </div>
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" name="removeNewLines" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Remove New Lines</label>
+                        <input type="checkbox" class="custom-control-input" name="analyzeAction" id="removeNewLines" value="removeNewLines">
+                        <label class="custom-control-label" for="removeNewLines">Remove New Lines</label>
                     </div>
                 </div>
 
