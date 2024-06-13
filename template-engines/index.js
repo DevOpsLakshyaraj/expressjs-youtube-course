@@ -1,22 +1,30 @@
 const express = require('express');
 const path = require('path');
 // const pug = require('pug');
-const ejs = require('ejs');
+// const ejs = require('ejs');
+const exphbs = require('express-handlebars');
 const users = require('./users');
+const { eq, count } = require('./config/hbs');
 const app = express();
 
 const PORT = 8080 || process.env.PORT;
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.set('view engine', 'ejs')
+app.engine('hbs', exphbs.engine({
+    extname: 'hbs',
+    defaultLayout: 'base',
+    helpers: { eq, count }
+}))
+
+app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/', (req, res) => {
     // res.send('Template Engine Tutorial - Pug')
     res.render('index', {
-        title: 'EJS Template Engine',
-        message: 'This is the ultimate tutorial on pug template engine',
+        title: 'Handlebars Template Engine',
+        message: 'This is the ultimate tutorial on handlebars template engine',
         users,
         search: true
     })
