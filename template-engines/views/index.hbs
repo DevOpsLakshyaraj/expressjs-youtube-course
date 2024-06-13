@@ -1,0 +1,17 @@
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <p class="lead text-muted">{{ message }}</p>
+    </div>
+</div>
+
+<div class="container my-3">
+    <h2 class="text-center">Our Users: {{ count users }}</h2>
+    <div class="row">
+        {{#each users}}
+            <div class="col-md-4">
+                {{> _card this}}
+            </div>
+        {{/each}}
+    </div>
+</div>
