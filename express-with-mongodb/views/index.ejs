@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ExpressJS with Mongodb</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <%- include('partials/_navbar') %>
+
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1>ExpressJS with Mongodb</h1>
+        </div>
+    </div>
+
+    <div class="container my-3">
+        <div class="row">
+            <% posts.forEach(function (post) { %>
+                <div class="col-md-4">
+                    <%- include('partials/_card', {post: post}) %>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <script src="/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+  </body>
+</html>

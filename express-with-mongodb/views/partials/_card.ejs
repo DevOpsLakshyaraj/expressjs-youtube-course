@@ -1,0 +1,11 @@
+<div class="card my-3">
+    <div class="card-header text-center"><%= post.id %></div>
+    <div class="card-body">
+        <p>Title: <%= post.title %></p>
+        <p>Tagline: <%= post.tagline %></p>
+    </div>
+
+    <div class="card-footer">
+        <a href="/post/<%= post.id %>" class="btn btn-dark d-block">Read More &raquo;</a>
+    </div>
+</div>
