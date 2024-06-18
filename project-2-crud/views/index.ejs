@@ -7,8 +7,40 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
+    <%- include('partials/_navbar') %>
     <div class="container my-3">
-        <h1 class="font-weight-bold text-info">Info! Project Intialization</h1>
+        <h2>Add your note</h2>
+        <form action="/api/add" method="post">
+            <div class="form-group">
+                <label for="noteDesc">Note Description</label>
+                <textarea name="noteDesc" id="noteDesc" class="form-control" rows="5" placeholder="Enter note text here..."></textarea>
+            </div>
+            <button class="btn btn-danger" type="submit">Submit</button>
+        </form>
+
+        <hr class="my-3">
+
+        <h2>Your personal notes</h2>
+        <div class="row">
+            <% notes.forEach(note => { %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header text-center"><%= note.uuid %></div>
+
+                    <div class="card-body">
+                        <p style="font-size: 1.2rem;" class="mb-0"><%= note.noteDesc %></p>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href=<%= "/edit/"+note.uuid %> class="btn btn-sm btn-success">Edit</a>
+                            <a href=<%= "/delete/"+note.uuid %> class="btn btn-sm btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
     </div>
     
     <script src="/js/jquery-3.4.1.min.js"></script>
