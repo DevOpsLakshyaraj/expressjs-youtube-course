@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpressJS CRUD</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('partials/_navbar') %>
+    <div class="container my-3">
+        <h2>Delete your note</h2>
+        <form action="/api/delete" method="post">
+            <input type="hidden" name="uuid" id="uuid" value="<%= uuid %>">
+            <button class="btn btn-danger" type="submit">Confirm Delete</button>
+        </form>
+    </div>
+    
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</body>
+</html>

@@ -7,4 +7,14 @@ router.get('/', async (req, res) => {
     res.render('index', {notes: notes})
 })
 
+router.get('/edit/:uuid', async (req, res) => {
+    const note = await Notes.findOne({uuid: req.params.uuid})
+    res.render('edit', {note: note})
+})
+
+router.get('/delete/:uuid', async (req, res) => {
+    const note = await Notes.findOne({uuid: req.params.uuid})
+    res.render('delete', {uuid: note.uuid})
+})
+
 module.exports = router;

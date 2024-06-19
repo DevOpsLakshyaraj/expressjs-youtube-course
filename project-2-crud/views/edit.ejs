@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpressJS CRUD</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('partials/_navbar') %>
+    <div class="container my-3">
+        <h2>Edit your note</h2>
+        <form action="/api/update" method="post">
+            <input type="hidden" name="uuid" id="uuid" value="<%= note.uuid %>">
+            <div class="form-group">
+                <label for="noteDesc">Note Description</label>
+                <textarea name="noteDesc" id="noteDesc" class="form-control" rows="5" placeholder="Enter note text here..."><%= note.noteDesc %></textarea>
+            </div>
+            <button class="btn btn-danger" type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</body>
+</html>

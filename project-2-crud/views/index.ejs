@@ -21,26 +21,32 @@
         <hr class="my-3">
 
         <h2>Your personal notes</h2>
-        <div class="row">
-            <% notes.forEach(note => { %>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header text-center"><%= note.uuid %></div>
+        <% if (notes.length == 0) { %>
+            <div class="alert alert-info">
+                <strong>Info!</strong> No notes available. Please add your first note!!!
+            </div>
+        <% } else { %>
+            <div class="row">
+                <% notes.forEach(note => { %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center"><%= note.uuid %></div>
 
-                    <div class="card-body">
-                        <p style="font-size: 1.2rem;" class="mb-0"><%= note.noteDesc %></p>
-                    </div>
+                        <div class="card-body">
+                            <p style="font-size: 1.2rem;" class="mb-0"><%= note.noteDesc %></p>
+                        </div>
 
-                    <div class="card-footer">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <a href=<%= "/edit/"+note.uuid %> class="btn btn-sm btn-success">Edit</a>
-                            <a href=<%= "/delete/"+note.uuid %> class="btn btn-sm btn-danger">Delete</a>
+                        <div class="card-footer">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <a href=<%= "/edit/"+note.uuid %> class="btn btn-sm btn-success">Edit</a>
+                                <a href=<%= "/delete/"+note.uuid %> class="btn btn-sm btn-danger">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <% }); %>
             </div>
-            <% }); %>
-        </div>
+        <% } %>
     </div>
     
     <script src="/js/jquery-3.4.1.min.js"></script>
