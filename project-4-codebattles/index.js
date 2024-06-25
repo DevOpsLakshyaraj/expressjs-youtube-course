@@ -1,7 +1,10 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const connectToMongo = require('./lib/db');
 const app = express();
+
+connectToMongo();
 
 const PORT = 8080 || process.env.PORT;
 
