@@ -1,0 +1,76 @@
+<div class="container px-24 py-3 my-3">
+    <h1 class="text-3xl font-semibold mb-3">Add a Post</h1>
+
+    <form action="" method="post">
+        <div class="mb-3">
+            <label for="title" class="leading-7 text-sm text-gray-600">Title</label>
+            <input type="text" id="title" name="title"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="mb-3">
+            <label for="excerpt" class="leading-7 text-sm text-gray-600">Excerpt</label>
+            <input type="text" id="excerpt" name="excerpt"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="leading-7 text-sm text-gray-600">Content</label>
+            <textarea id="content" name="content"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+        </div>
+
+        <button
+            class="px-6 py-2 rounded-md bg-blue-500 border border-blue-500 font-semibold text-white mb-3">Submit</button>
+    </form>
+
+    <hr class="my-3">
+    <table class="table-auto w-full mx-auto">
+        <thead class="border">
+            <tr>
+                <th class="p-2 text-center">Sno</th>
+                <th class="p-2 text-center">Title</th>
+                <th class="p-2 text-center">Created</th>
+                <th class="p-2 text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="border">
+            <tr>
+                <td class="p-2 text-center">1</td>
+                <td class="p-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                <td class="p-2 text-center">
+                    <script>document.write(new Date().toDateString())</script>
+                </td>
+                <td class="p-2 text-center">
+                    <a href="/edit"><button class="px-2 py-1 bg-emerald-500 text-white rounded"><i
+                                class="fa fa-pencil"></i></button></a>
+                    <a href="javascript:void(0);" class="deleteBtn" data-postid="us8as00dushs0s8893d"><button
+                            class="px-2 py-1 bg-red-500 text-white rounded"><i class="fa fa-trash"></i></button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script src="https://cdn.ckeditor.com/4.22.1/full-all/ckeditor.js"></script>
+
+<script>
+    $('document').ready(function () {
+
+        if (document.contains(document.getElementById('content'))) {
+            CKEDITOR.replace('content', {
+                extraPlugins: 'codesnippet',
+                codeSnippet_theme: 'monokai_sublime'
+            });
+        }
+
+        $('a.deleteBtn').each(function (index, element) {
+            $(element).click(function (e) {
+                const postID = $(element).data('postid');
+
+                if (window.confirm('Do you comfirm deletion of this post ?')) {
+                    window.location.href = window.location.origin + '/delete'
+                }
+            })
+        })
+    })
+</script>

@@ -13,5 +13,6 @@ You will learn all the basics of expressjs through this free course.
   - [ExpressJS With MongoDB](https://github.com/DevOpsLakshyaraj/expressjs-youtube-course/tree/master/express-with-mongodb)
   - [Project 2: CRUD App](https://github.com/DevOpsLakshyaraj/expressjs-youtube-course/tree/master/project-2-crud)
   - [Project 3: URL Shortener](https://github.com/DevOpsLakshyaraj/expressjs-youtube-course/tree/master/project-3-iurls)
+  - [Project 4: CodeBattles](https://github.com/DevOpsLakshyaraj/expressjs-youtube-course/tree/master/project-4-codebattles)
 
 Youtube Channel: [https://www.youtube.com/@devopslakshyaraj](https://www.youtube.com/@devopslakshyaraj) 

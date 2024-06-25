@@ -1,0 +1,35 @@
+<div class="container px-24 py-3 my-3">
+    <h1 class="text-3xl font-semibold mb-3">Edit your Post</h1>
+
+    <form action="" method="post">
+        <div class="mb-3">
+            <label for="title" class="leading-7 text-sm text-gray-600">Title</label>
+            <input type="text" id="title" name="title"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="mb-3">
+            <label for="excerpt" class="leading-7 text-sm text-gray-600">Excerpt</label>
+            <input type="text" id="excerpt" name="excerpt"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="leading-7 text-sm text-gray-600">Content</label>
+            <textarea id="content" name="content"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+        </div>
+
+        <button
+            class="px-6 py-2 rounded-md bg-blue-500 border border-blue-500 font-semibold text-white mb-3">Submit</button>
+    </form>
+</div>
+
+<script src="https://cdn.ckeditor.com/4.22.1/full-all/ckeditor.js"></script>
+
+<script>
+    if (document.contains(document.getElementById('content'))) {
+        CKEDITOR.replace('content', {
+            extraPlugins: 'codesnippet',
+            codeSnippet_theme: 'monokai_sublime'
+        });
+    }
+</script>
