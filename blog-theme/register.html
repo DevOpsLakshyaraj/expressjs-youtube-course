@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for an account - CodeBattles</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <nav class="bg-gray-800">
+        <div class="px-24 py-4 lg:flex items-center justify-between block">
+          <a href="index.html" class="text-2xl text-white">
+            &lt;CodeBattles.io/&gt;
+          </a>
+          <button id="toggleBtn" class="text-xl text-white hover:*:opacity-80 float-end block lg:hidden"><i
+              class="fa fa-bars"></i></button>
+          <ul class="lg:flex items-center gap-6 hidden menu">
+            <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2" href="index.html"><i
+                  class="fa fa-home"></i> Home</a></li>
+            <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2" href="about.html"><i
+                  class="fa fa-info"></i> About</a></li>
+            <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2" href="contact.html"><i
+                  class="fa fa-phone"></i> Contact Us</a></li>
+            <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a
+                class="flex items-center gap-2" href="login.html"><i class="fa fa-user-lock"></i> Login</a></li>
+            <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a
+                class="flex items-center gap-2" href="register.html"><i class="fa fa-user-lock"></i> Register</a></li>
+            <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a
+                class="flex items-center gap-2" href="register.html"><i class="fa fa-user-lock"></i> Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container p-4 m-auto border w-1/3 my-3 rounded-md shadow">
+        <h1 class="text-3xl font-semibold mb-3 text-center">Register</h1>
+        <p class="text-slate-400 mb-3 text-center">Register for a new account</p>
+        
+        <form action="" method="post">
+            <div class="mb-3">
+                <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="leading-7 text-sm text-gray-600">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="leading-7 text-sm text-gray-600">Passsword</label>
+                <input type="password" id="password" name="password" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="mb-3">
+                <label for="cpassword" class="leading-7 text-sm text-gray-600">Confirm Passsword</label>
+                <input type="password" id="cpassword" name="cpassword" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+
+            <button class="px-6 py-2 rounded-md bg-blue-500 border border-blue-500 font-semibold text-white mx-auto block">Register</button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $('document').ready(function() {
+            $('button#toggleBtn').click(function(){
+                $('ul.menu').slideToggle();
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CodeBattles</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+    <nav class="bg-gray-800">
+        <div class="px-24 py-4 lg:flex items-center justify-between block">
+            <a href="index.html" class="text-2xl text-white">
+                &lt;CodeBattles.io/&gt;
+            </a>
+            <button id="toggleBtn" class="text-xl text-white hover:*:opacity-80 float-end block lg:hidden"><i
+                    class="fa fa-bars"></i></button>
+            <ul class="lg:flex items-center gap-6 hidden menu">
+                <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2"
+                        href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2"
+                        href="about.html"><i class="fa fa-info"></i> About</a></li>
+                <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2"
+                        href="contact.html"><i class="fa fa-phone"></i> Contact Us</a></li>
+                <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2"
+                        href="login.html"><i class="fa fa-user-lock"></i> Login</a></li>
+                <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2"
+                        href="register.html"><i class="fa fa-user-lock"></i> Register</a></li>
+                <li class="text-white hover:*:opacity-80 my-5 lg:my-0"><a class="flex items-center gap-2"
+                        href="register.html"><i class="fa fa-user-lock"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container px-24 py-3 my-3">
+        <h1 class="text-3xl font-semibold mb-3">Add a Post</h1>
+
+        <form action="" method="post">
+            <div class="mb-3">
+                <label for="title" class="leading-7 text-sm text-gray-600">Title</label>
+                <input type="text" id="title" name="title"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="mb-3">
+                <label for="excerpt" class="leading-7 text-sm text-gray-600">Excerpt</label>
+                <input type="text" id="excerpt" name="excerpt"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="leading-7 text-sm text-gray-600">Content</label>
+                <textarea id="content" name="content"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+
+            <button
+                class="px-6 py-2 rounded-md bg-blue-500 border border-blue-500 font-semibold text-white mb-3">Submit</button>
+        </form>
+
+        <hr class="my-3">
+        <table class="table-auto w-full mx-auto">
+            <thead class="border">
+                <tr>
+                    <th class="p-2 text-center">Sno</th>
+                    <th class="p-2 text-center">Title</th>
+                    <th class="p-2 text-center">Created</th>
+                    <th class="p-2 text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="border">
+                <tr>
+                    <td class="p-2 text-center">1</td>
+                    <td class="p-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                    <td class="p-2 text-center">
+                        <script>document.write(new Date().toDateString())</script>
+                    </td>
+                    <td class="p-2 text-center">
+                        <a href="edit.html"><button class="px-2 py-1 bg-emerald-500 text-white rounded"><i
+                                class="fa fa-pencil"></i></button></a>
+                        <a href="javascript:void(0);" class="deleteBtn" data-postid="us8as00dushs0s8893d"><button class="px-2 py-1 bg-red-500 text-white rounded"><i class="fa fa-trash"></i></button></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.22.1/full-all/ckeditor.js"></script>
+
+    <script>
+        $('document').ready(function () {
+            $('button#toggleBtn').click(function () {
+                $('ul.menu').slideToggle();
+            })
+
+            if (document.contains(document.getElementById('content'))) {
+                CKEDITOR.replace('content', {
+                    extraPlugins: 'codesnippet',
+                    codeSnippet_theme: 'monokai_sublime'
+                });
+            }
+
+            $('a.deleteBtn').each(function(index, element) {
+                $(element).click(function(e) {
+                    const postID = $(element).data('postid');
+                    
+                    if (window.confirm('Do you comfirm deletion of this post ?')) {
+                        window.location.href = window.location.origin + '/delete.html'
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
