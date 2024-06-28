@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - CodeBattles</title>
-    <link rel="stylesheet" href="assets/css/index.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer async></script>
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 
 <body>
@@ -37,6 +35,7 @@
 
     {{{body}}}
 
+    <script src="/assets/js/jquery.min.js"></script>
 
     <script>
         $('document').ready(function () {
@@ -44,7 +43,14 @@
                 $('ul.menu').slideToggle();
             })
         })
+
     </script>
+
+    {{#if message}}
+    <script>
+        window.alert("{{ message }}");
+    </script>
+    {{/if}}
 </body>
 
 </html>

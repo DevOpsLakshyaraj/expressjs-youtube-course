@@ -54,23 +54,19 @@
 <script src="https://cdn.ckeditor.com/4.22.1/full-all/ckeditor.js"></script>
 
 <script>
-    $('document').ready(function () {
+    if (document.contains(document.getElementById('content'))) {
+        CKEDITOR.replace('content', {
+            extraPlugins: 'codesnippet',
+            codeSnippet_theme: 'monokai_sublime'
+        });
+    }
+    Array.from(document.querySelectorAll('a.deleteBtn')).forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            const postID = e.target.dataset.postid;
 
-        if (document.contains(document.getElementById('content'))) {
-            CKEDITOR.replace('content', {
-                extraPlugins: 'codesnippet',
-                codeSnippet_theme: 'monokai_sublime'
-            });
-        }
-
-        $('a.deleteBtn').each(function (index, element) {
-            $(element).click(function (e) {
-                const postID = $(element).data('postid');
-
-                if (window.confirm('Do you comfirm deletion of this post ?')) {
-                    window.location.href = window.location.origin + '/delete'
-                }
-            })
+            if (window.confirm('Do you comfirm deletion of this post ?')) {
+                window.location.href = window.location.origin + '/delete'
+            }
         })
     })
 </script>
